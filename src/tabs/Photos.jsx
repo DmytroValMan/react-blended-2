@@ -16,7 +16,10 @@ const Photos = () => {
 
   const getQuery = (inputValue, isNewRequest = false) => {
     setQuery(inputValue);
-    isNewRequest && setImages([]);
+    if (isNewRequest) {
+      setImages([]);
+      setPage(1);
+    }
   };
 
   useEffect(() => {
